@@ -21,7 +21,8 @@ if (process.env.HTTPS_PROXY) {
    options.agent = new ProxyAgent(process.env.HTTPS_PROXY, {tunnel: true});
 }
 
-fetch("https://jitsi.riot.im/libs/external_api.min.js", options).then(res => {
+//fetch("https://jitsi.riot.im/libs/external_api.min.js", options).then(res => {
+fetch("http://localhost/dashboard/external_api.min.js", options).then(res => {
    const stream = fs.createWriteStream(fname);
    return new Promise((resolve, reject) => {
        res.body.pipe(stream);

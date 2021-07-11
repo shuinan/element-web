@@ -115,6 +115,12 @@ module.exports = (env, argv) => {
             },
         },
 
+		node: {
+            fs: 'empty',
+            net:'empty',
+            tls:'empty',
+        },
+
         module: {
             noParse: [
                 // for cross platform compatibility use [\\\/] as the path separator
@@ -378,7 +384,11 @@ module.exports = (env, argv) => {
             filename: "bundles/[hash]/[name].js",
             chunkFilename: "bundles/[hash]/[name].js",
         },
-
+        node: {
+            fs: 'empty',
+            net:'empty',
+            tls:'empty',
+        },
         // configuration for the webpack-dev-server
         devServer: {
             // serve unwebpacked assets from webapp.
